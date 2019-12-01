@@ -6,6 +6,8 @@ function saveallfigs(output_path)
 %   OUTPUT_PATH must be an absolute path to an existing folder.
 %
 %   The function works in LiveScript, if it is placed in a separate section.
+%   
+%   V1.0 01/12/19 by Samuel Londner
 
 
 %validate/correct output path
@@ -48,7 +50,7 @@ for jj=1:length(all_figures)
         set(current_fig, 'Visible', 'on');
         
         %build fig filename
-        filename = fullfile(dirname, ['fig' num2str(jj) '_' figname];
+        filename = fullfile(dirname, ['fig' num2str(jj) '_' figname]);
         % export to PNG
         print(current_fig, [filename '.png'], '-dpng', '-r450');
         % save to FIG
