@@ -1,10 +1,17 @@
-function saveAllFigs(output_path)
-%output_path is the absolute path of an existing directory.
-%Works in LiveScript - put in separate section.
+function saveallfigs(output_path)
+% SAVEALLFIGS  Saves and exports all open figures to FIG and PNG files.
+%   SAVEALLFIGS saves all the figures in the current folder.
+%
+%   SAVEALLFIGS(OUTPUT_PATH) saves all the figures into the directory OUTPUT_PATH.
+%   OUTPUT_PATH must be an absolute path to an existing folder.
+%
+%   The function works in LiveScript, if it is placed in a separate section.
 
-all_figures = findobj('Type', 'figure');
 
 %validate/correct output path
+if nargin==0 || isempty(output_path) || output_path==""
+    output_path = pwd;
+end
 output_path = char(output_path); %in case string was given
 %TODO: support relative/non-existing folder
 %if output_path(end) ~= filesep
@@ -12,6 +19,7 @@ output_path = char(output_path); %in case string was given
 %end
 %[filepath,name,ext] = fileparts(output_path) ;
 
+all_figures = findobj('Type', 'figure');
 
 
 dirname = output_path;
