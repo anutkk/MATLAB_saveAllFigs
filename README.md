@@ -1,4 +1,4 @@
-# MATLAB_saveAllFigs
+# saveallfigs
 A function for saving all open figures in MATLAB.
 
 The function saves all the open figures as .PNG and .FIG files. The output folder path is an optional argument of the function.
